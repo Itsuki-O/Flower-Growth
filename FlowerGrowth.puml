@@ -1,0 +1,59 @@
+@startuml Flower.puml
+
+skinparam classAttributeIconSize 0
+
+class Environment {
+  - sunlightHours : int
+  - humidity : int
+  - temperature : int
+  - nutrition : int
+}
+
+class WeatherData {
+  - sunlightHours : int
+  - humidity : int
+  - temperature : int
+}
+
+class SeasonNutrition {
+  + getMonth() : void
+}
+
+abstract class Flower {
+  - name : String
+  - geneCode : String
+  + grow() : void
+  + bloom() : void
+  + {abstract} futureBehavior() : void
+}
+
+class EarlyBloomFlower {
+  + futureBehavior() : void
+  + bloomEarly() : void
+}
+
+class ColorChangeFlower {
+  + futureBehavior() : void
+  + changeColor() : void
+}
+
+class FragrantFlower {
+  + futureBehavior() : void
+  + releaseFragrance() : void
+}
+
+class LongLifeFlower {
+  + futureBehavior() : void
+  + extendBloom() : void
+}
+
+Flower <|-- EarlyBloomFlower
+Flower <|-- ColorChangeFlower
+Flower <|-- FragrantFlower
+Flower <|-- LongLifeFlower
+Flower <.. Environment
+
+WeatherData ..> Environment
+SeasonNutrition ..> Environment
+
+@enduml
