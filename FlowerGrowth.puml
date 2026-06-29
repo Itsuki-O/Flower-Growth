@@ -9,12 +9,6 @@ class Environment {
   - nutrition : int
 }
 
-class WeatherData {
-  - sunlightHours : int
-  - humidity : int
-  - temperature : int
-}
-
 class SeasonNutrition {
   + getMonth() : void
 }
@@ -52,8 +46,6 @@ Flower <|-- ColorChangeFlower
 Flower <|-- FragrantFlower
 Flower <|-- LongLifeFlower
 Flower <.. Environment
-
-WeatherData ..> Environment
 SeasonNutrition ..> Environment
 
 @enduml
